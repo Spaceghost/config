@@ -56,7 +56,8 @@ for filename in $files; do
 done
 
 # Run update script to pull remote submodules
-cd `dirname $0` && ./update.sh
+echo Pulling remote submodules...
+cd `dirname $0` && ./update.sh 1> /dev/null
 
 echo Writing config settings...
 git config --global user.name $git_name > /dev/null
