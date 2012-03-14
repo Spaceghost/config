@@ -66,6 +66,6 @@ git config --global github.user $github_username > /dev/null
 git config --global github.token $github_token > /dev/null
 
 echo Sourcing .bash_profile...
-source ~/.bash_profile
+. ~/.bash_profile
 
 echo Done!
