@@ -77,15 +77,6 @@ source git_prompt
 source git-completion.bash
 source git-flow-completion.bash
 
-# ssh public key agent code
-#SSHAGENT=/usr/bin/ssh-agent
-#SSHAGENTARGS="-s"
-#if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-#   eval `$SSHAGENT $SSHAGENTARGS` > /dev/null
-#   trap "kill $SSH_AGENT_PID" 0
-#fi
-#ssh-add ~/.ssh/id_rsa
-
 # searches for given string in filenames in current and all subdirectories
 function s { find . -nowarn -name "*$1*" 2>/dev/null; }
 # searches for given filename exactly in current and all subdirectories
@@ -93,8 +84,6 @@ function ss { find . -nowarn -name "$1" 2>/dev/null; }
 
 # ls with showall, colors, and /'s after directories
 alias ls="ls -AFhxX --color --group-directories-first "
-#alias l="ls"
-#alias ll="ls -A -XSx -l"
 alias ll='ls -alF'
 alias lk="ls -gGhLXS"
 alias la='ls -A'
@@ -129,9 +118,6 @@ function psg { ps -A | awk 'NR==1; /'$1'/&&!/awk/'; }
 # spell checker
 function spell { echo $@|aspell -a; }
 
-# Quick bash.org
-#bashorg () { lynx -dump "www.bash.org?$1" | less; }
-
 # sooo many letters to type in a day, here's a few less for the history command
 alias h='history'
 # bash history shit, removes dups, increases size, and saves on shell exit
@@ -144,4 +130,5 @@ shopt -s histappend
 
 # Adding CDE specific aliases
 alias cde='cd ~/Projects/Corndog'
+alias config='cd ~/Projects/config'
 alias gs='git status'
