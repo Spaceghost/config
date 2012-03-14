@@ -1,6 +1,4 @@
 [user]
-  name = Anthony Cook
-  email = anthonymichaelcook@gmail.com
   editor = vim
 
 [core]
@@ -50,6 +48,14 @@
 	l = !GIT_PAGER=less git log --pretty=oneline --abbrev-commit --decorate
 	subdo = submodule foreach git
 	top = !eval cd "$(pwd)/$(git rev-parse --show-cdup)" && pwd
+
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+
+[mergetool "sourcetree"]
+  cmd = /Applications/More/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 [push]
 	default = current
