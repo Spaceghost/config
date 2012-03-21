@@ -1,6 +1,3 @@
-" for testing different rgb mappings for colors
-"let rgb_file = "~/.vim/rgb.txt"
-
 " don't worry about trying to stick to vi/ex conventions
 set nocompatible
 
@@ -46,9 +43,6 @@ let g:indent_guides_guide_size  = 1
 autocmd! VimEnter,Colorscheme * hi IndentGuidesOdd ctermbg=236 guibg=#303030 | hi IndentGuidesEven ctermbg=239 guibg=#505050
 autocmd BufRead * IndentGuidesEnable
 "autocmd! VimEnter,Colorscheme * hi IndentGuidesEven ctermbg=123 guibg=#880055
-
-" configure Powerline, enable fancy symbols
-let g:Powerline_symbols = 'fancy'
 
 " initialize pathogen and load all the plugins in .vim/bundle
 runtime bundle/vim-pathogen/autoload/pathogen.vim
