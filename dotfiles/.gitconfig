@@ -1,5 +1,7 @@
 [user]
   editor = vim
+	name = Cyan Corolla
+	email = cyancorolla@example.com
 
 [core]
   pager = less -FRSX

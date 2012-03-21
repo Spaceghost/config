@@ -44,8 +44,6 @@ else
   fi
 fi
 
-alias less=$PAGER
-
 # shortcut to vim
 alias :e=vim
 
@@ -121,6 +119,3 @@ shopt -s histappend
 alias cde='cd ~/Projects/Corndog'
 alias config='cd ~/Projects/config'
 alias gs='git status'
-
-. ~/.bashrgb
-export PS1="\[$(title $(PWD))\]\[$(fgx 154)\]\w \[$(fgx 255)\]($(hostname)) \[$(fgx 150)\]$(~/.rvm/bin/rvm-prompt)$(git_branch)\[$(fgx 154)\]$(git_dirty)\n\[\r\]\[$(fgx 26)\]\$\[$(ansi_reset)\] "
