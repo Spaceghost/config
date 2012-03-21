@@ -9,7 +9,7 @@
 while getopts ":n" opt; do
   case $opt in
     n)
-      $noninteractive = 'true'
+      noninteractive='true'
       ;;
     \?)
       echo "Ignoring invalid option: -$OPTARG" >&2
@@ -17,7 +17,7 @@ while getopts ":n" opt; do
   esac
 done
 
-if [[ $1 != 'true' ]]; then
+if [[ $noninteractive != 'true' ]]; then
   echo "Enter additional info to use for this configuration (pass -n to skip this in the future)."
   echo -ne "git name: "
   read $git_name
@@ -58,11 +58,13 @@ done
 echo Pulling remote submodules...
 pushd `dirname $0` && ./update.sh 1>/dev/null
 
-echo Writing config settings...
-git config --global user.name $git_name > /dev/null
-git config --global user.email $git_email > /dev/null
-git config --global github.user $github_username > /dev/null
-git config --global github.token $github_token > /dev/null
+if [[ $1 != 'true' ]]; then
+  echo Writing config settings...
+  git config --global user.name $git_name > /dev/null
+  git config --global user.email $git_email > /dev/null
+  git config --global github.user $github_username > /dev/null
+  git config --global github.token $github_token > /dev/null
+fi
 
 echo "You should now source bashrc (source ~/.bashrc)"
 
