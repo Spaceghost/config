@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 cd `dirname $0`
-echo Clearing and updating remote submodules...
-rm -rfv `git submodule | cut -f 3 --delimiter " "`
+echo Updating remote submodules...
 git submodule update --init --recursive
+git submodule foreach "git fetch && git checkout origin/HEAD"
