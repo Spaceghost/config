@@ -32,8 +32,8 @@ fi
 cd `dirname $0`
 
 dir=`pwd`
-dot_dir=$dir/dotfiles
-backup_dir=$dir/backup
+dot_dir=$dir/../dotfiles
+backup_dir=$dir/../backup
 
 echo dot_dir: $dot_dir
 echo backup_dir: $backup_dir
