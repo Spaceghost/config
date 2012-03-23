@@ -58,7 +58,7 @@ done
 echo Pulling remote submodules...
 $dir/update.sh 1>/dev/null
 
-if [[ $1 != 'true' ]]; then
+if [[ $noninteractive != 'true' ]]; then
   echo Writing config settings...
   git config --global user.name $git_name > /dev/null
   git config --global user.email $git_email > /dev/null
