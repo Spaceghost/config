@@ -205,7 +205,7 @@ map <leader>rl :Rlocale<CR>
 map <leader>ff :CtrlP<CR>
 map <leader>fb :CtrlPBuffer<CR>
 map <leader>ft :CtrlPTag<CR>
-map <leader>fq :CtrlPQuickFix<CR>
+map <leader>fq :CtrlPQuickfix<CR>
 map <leader>fd :CtrlPDir<CR>
 map <leader>fr :CtrlPRTS<CR>
 map <leader>fm :CtrlPMRU<CR>
