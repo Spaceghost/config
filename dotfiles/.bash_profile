@@ -28,12 +28,16 @@ case $unamestr in
   'Linux')
     if command -v keychain ; then
       keychain id_rsa
-      . ~/.keychain/`uname -n`-sh
+      source ~/.keychain/`uname -n`-sh
     fi
 
     # set variable identifying the chroot you work in
     if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
       debian_chroot=$(cat /etc/debian_chroot)
+    fi
+
+    if [[ -n `command -v 'ack-grep'` ]] ; then
+      alias ack='ack-grep'
     fi
 esac
 
@@ -56,7 +60,7 @@ export PATH=$HOME/bin:$HOME/xbin:$PATH:$HOME/phantomjs/bin
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-  . /etc/bash_completion
+  source /etc/bash_completion
 fi
 
 # load up my git-enabled prompt
