@@ -56,7 +56,7 @@ for filename in $files; do
 done
 
 echo Pulling remote submodules...
-pushd `dirname $0` && ./update.sh 1>/dev/null
+$dir/update.sh 1>/dev/null
 
 if [[ $1 != 'true' ]]; then
   echo Writing config settings...

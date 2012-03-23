@@ -170,12 +170,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " treat question marks as part of a word in ruby
 autocmd BufRead *.rb,*.rake,*.rhtml,<ruby> set isk=?,@,48-57,_,192-255
 
-" ruby
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
 " disable wordwrap when looking at CSVs
 autocmd BufRead *.csv,*.csv*,<csv> set nowrap
 
@@ -191,8 +185,6 @@ au BufWrite * if ! &bin | call StripTrailingWhitespace() | endif
 if has('title')
   set title
   autocmd BufEnter * let &titlestring = "vim: " . expand("%:p:~")
-  "set titlestring=%t%(\ [%R%M]%)
-  "autocmd BufEnter * exe "echo '\033'+bufname("%")+'\007'"
 endif
 
 " shortcuts
@@ -200,7 +192,7 @@ endif
 map <leader>t  :A<CR>
 map <leader>ts :AS<CR>
 map <leader>tv :AV<CR>
-" foe rails.vim swap to model/control/etc from associated file
+" for rails.vim swap to model/control/etc from associated file
 map <leader>rm :Rmodel<CR>
 map <leader>rc :Rcontroller<CR>
 map <leader>rh :Rhelper<CR>
@@ -249,7 +241,7 @@ cnoremap <C-K> <C-U>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
-" Smart way to move btw. windows
+" Easy way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
