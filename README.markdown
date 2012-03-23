@@ -11,9 +11,12 @@ How to Use
 ----------
 
 0. Open a terminal in the same directory as this file.
-0. Run `./install.sh`
+0. Run `./script/install.sh` or `./script/config_my_ride.sh`
 0. Enjoy!
 
+- Use the `./script/update.sh` script to update your Vim bundles (or other submodules in the repo).
+- The `./script/config_my_ride.sh` ensures you have the basic prerequisites and a clean config directory before running the install script.
+- Pass the `-n` flag to `install.sh` to skip the Q&A section.
 
 What the `install.sh` script does
 ---------------------------------
