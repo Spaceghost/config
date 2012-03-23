@@ -30,6 +30,11 @@ case $unamestr in
       keychain id_rsa
       . ~/.keychain/`uname -n`-sh
     fi
+
+    # set variable identifying the chroot you work in
+    if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+      debian_chroot=$(cat /etc/debian_chroot)
+    fi
 esac
 
 # Handle potential pagers
@@ -44,11 +49,8 @@ else
   fi
 fi
 
-# shortcut to vim
-alias :e=vim
-
 # add path to user bin and xbin directories
-export PATH=$HOME/bin:$HOME/xbin:$PATH
+export PATH=$HOME/bin:$HOME/xbin:$PATH:$HOME/phantomjs/bin
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -92,30 +94,27 @@ function rg { find . -name '*.*rb' -exec grep "$*" {} \; -print; }
 # diff with unified format (why use anything else?!)
 alias diff='diff -U3'
 
-# Add an "alert" alias for long running commands. Use semicolor to execute it in sequence
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# replace this with a util that allows real directory history navigation
-alias cx='pushd'
-alias cz='popd'
-
 # prints out the ps header and then displays all processes matching the given argument
 function psg { ps -A | awk 'NR==1; /'$1'/&&!/awk/'; }
 
 # spell checker
 function spell { echo $@|aspell -a; }
 
-# sooo many letters to type in a day, here's a few less for the history command
-alias h='history'
-# bash history shit, removes dups, increases size, and saves on shell exit
-export HISTCONTROL=erasedups
+# bash history: removes dups, increases size, and saves on shell exit
+export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=10000
+export HISTFILESIZE=2000
 shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Extra alias definitions
+if [ -f ~/.bash_aliases ]; then
+  source ~/.bash_aliases
+fi
 
 # Load RVM if available
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Adding CDE specific aliases
-alias cde='cd ~/Projects/Corndog'
-alias config='cd ~/Projects/config'
-alias gs='git status'
