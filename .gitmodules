@@ -112,3 +112,6 @@
 [submodule "dotfiles/.vim/bundle/ack.vim"]
 	path = dotfiles/.vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "dotfiles/.vim/bundle/Align.vim"]
+	path = dotfiles/.vim/bundle/Align.vim
+	url = https://github.com/vim-scripts/Align.git
