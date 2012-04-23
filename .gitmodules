@@ -109,3 +109,6 @@
 [submodule "dotfiles/.vim/bundle/LustyExplorer"]
 	path = dotfiles/.vim/bundle/LustyExplorer
 	url = https://github.com/vim-scripts/LustyExplorer.git
+[submodule "dotfiles/.vim/bundle/ack.vim"]
+	path = dotfiles/.vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
