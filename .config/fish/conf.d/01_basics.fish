@@ -1,0 +1,1 @@
+set -U EDITOR vim
