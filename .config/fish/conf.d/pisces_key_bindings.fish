@@ -5,7 +5,7 @@ switch $fish_key_bindings
 end
 
 set -q pisces_pairs
-or set -U pisces_pairs '(,)' '[,]' '{,}' '","' "','"
+or set -U pisces_pairs '(,)' '[,]' '{,}' '","' "','" '<,>' '`,`'
 
 for pair in $pisces_pairs
     _pisces_bind_pair $_pisces_bind_mode (string split -- ',' $pair)
