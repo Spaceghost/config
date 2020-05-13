@@ -1,0 +1,40 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Johnneylee Jack Rollins
+	email = Johnneylee.Rollins@gmail.com
+	signingkey = DF67E932B9F618E0483B212E5D476A62758ABCF1
+[fetch]
+	parallel = 8
+	writeCommitGraph = true
+[feature]
+	experimental = true
+[format]
+	notes = true
+[commit]
+	gpgsign = true
+[receive]
+	denyDeletes = true
+	denyDeleteCurrent = true
+[rerere]
+	enabled = true
+[status]
+	showStash = true
+[tag]
+	forceSignAnnotated = true
+	gpgSign = true
+[worktree]
+	guessRemote = true
+
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/notes/*:refs/notes/*
+[alias]
+	log = git log --show-notes=\"*\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+	showSignature = true
