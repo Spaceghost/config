@@ -27,7 +27,8 @@
 	guessRemote = true
 
 [remote "origin"]
-	push = +refs/notes/*:refs/notes/*
+       # push = +refs/heads/*:refs/remotes/origin/*
+	# push = +refs/notes/*:refs/notes/*
 	fetch = +refs/heads/*:refs/remotes/origin/*
 	fetch = +refs/notes/*:refs/notes/*
 [alias]
