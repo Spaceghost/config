@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+git notes | awk '{
+  id=$2
+  cmd="git show --date=short --format=\"%cd %h %N\" " id
+  cmd | getline
+  print
+  close(cmd)
+}' | sort | awk '{
+  if (active == 0) print "\nPENDING NOTES:\n=============="
+  active=1
+  print
+} END {
+  if (active == 1) print "\nTo dismiss a note, run `git notes remove <sha>`\n"
+}'

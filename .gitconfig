@@ -40,3 +40,9 @@
 	required = true
 [log]
 	showSignature = true
+[push]
+	default = upstream
+[core]
+	hooksPath = ~/.config/git/hooks
+[notes]
+	displayRef = true
