@@ -33,6 +33,7 @@
 	fetch = +refs/notes/*:refs/notes/*
 [alias]
 	log = git log --show-notes=\"*\"
+	graph = log --all --graph --pretty=format:\"%Cred%h%Creset %C(bold blue)%an%Creset :%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset\" --abbrev-commit
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
