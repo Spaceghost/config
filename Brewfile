@@ -102,4 +102,7 @@ cask "vscodium"
 cask "xpra"
 mas "Deliveries", id: 924726344
 mas "MindNode", id: 1289197285
+repo = 'popcorn-official/popcorn-desktop'
+tap repo, "https://github.com/#{repo}.git"
+cask 'popcorn-time'
 brew "watchexec"
