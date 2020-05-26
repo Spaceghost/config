@@ -9,5 +9,9 @@ function fish_greeting
 		brew install lolcat
 	end
         fortune | cowsay | lolcat
-	bat TODO.md
+
+	if not type mdv > /dev/null 2>&1
+		pip3 install mdv
+	end
+	mdv TODO.md
 end
