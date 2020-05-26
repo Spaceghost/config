@@ -8,7 +8,7 @@ function fish_greeting
  	if not type lolcat > /dev/null 2>&1
 		brew install lolcat
 	end
-        fortune | cowsay | lolcat
+        fortune | cowsay -n -f kitty | lolcat
 
 	if not type mdv > /dev/null 2>&1
 		pip3 install mdv
