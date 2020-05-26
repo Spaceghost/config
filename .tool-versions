@@ -1,6 +1,10 @@
 nodejs 13.8.0
-ruby 2.7.0
+ruby system
 graalvm system
 java system
 nim system
 tmux system
+1p system
+1password system
+v system
+zig system
