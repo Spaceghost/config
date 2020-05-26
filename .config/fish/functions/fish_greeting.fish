@@ -9,4 +9,5 @@ function fish_greeting
 		brew install lolcat
 	end
         fortune | cowsay | lolcat
+	bat TODO.md
 end
