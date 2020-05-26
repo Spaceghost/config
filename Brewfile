@@ -102,3 +102,4 @@ cask "vscodium"
 cask "xpra"
 mas "Deliveries", id: 924726344
 mas "MindNode", id: 1289197285
+brew "watchexec"
