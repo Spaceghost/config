@@ -26,11 +26,11 @@
 [worktree]
 	guessRemote = true
 
-[remote "origin"]
-       # push = +refs/heads/*:refs/remotes/origin/*
+# [remote "origin"]
+        # push = +refs/heads/*:refs/remotes/origin/*
 	# push = +refs/notes/*:refs/notes/*
-	fetch = +refs/heads/*:refs/remotes/origin/*
-	fetch = +refs/notes/*:refs/notes/*
+	# fetch = +refs/heads/*:refs/remotes/origin/*
+	# fetch = +refs/notes/*:refs/notes/*
 [alias]
 	log = git log --show-notes=\"*\"
 	graph = log --all --graph --pretty=format:\"%Cred%h%Creset %C(bold blue)%an%Creset :%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset\" --abbrev-commit
