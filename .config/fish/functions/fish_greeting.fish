@@ -10,8 +10,10 @@ function fish_greeting
 	end
         fortune | cowsay -n -f kitty | lolcat
 
-	if not type mdv > /dev/null 2>&1
-		pip3 install mdv
-	end
-	mdv TODO.md
+  if test -f TODO.md
+    if not type mdv > /dev/null 2>&1
+      pip3 install mdv
+    end
+    mdv TODO.md
+  end
 end
