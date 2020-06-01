@@ -26,6 +26,11 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 10,
     "editor.minimap.enabled": false,
-    "editor.renderControlCharacters": true
+    "editor.renderControlCharacters": true,
+    "editor.rulers": [80,120]
+    "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#9400D3"
+    }
+    "todo-tree.tree.showScanModeButton": false
 }
 
