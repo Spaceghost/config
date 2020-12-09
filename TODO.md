@@ -1,1 +1,4 @@
-Work!
+# Setup
+
+* rclone
+* ssb-server

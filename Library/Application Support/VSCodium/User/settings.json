@@ -22,15 +22,38 @@
     "peacock.affectTabActiveBorder": true,
     "peacock.affectAccentBorders": true,
     "peacock.darkenLightenPercentage": 10,
+    "editor.detectIndentation": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "editor.fontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 10,
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
-    "editor.rulers": [80,120]
+    "editor.rulers": [
+      {
+        "column": 79,
+        "color": "#424142"
+      },
+      100, // <- a ruler in the default color or as customized at column 0
+      {
+        "column": 120,
+        "color": "#ff0000"
+      },
+    ],
+    //"editor.rulers": [80,120]
     "workbench.colorCustomizations": {
       "editorRuler.foreground": "#9400D3"
-    }
-    "todo-tree.tree.showScanModeButton": false
+    },
+    "[git-commit]": {"editor.rulers": [50]},
+    "[python]": {
+      "editor.rulers": [
+        79,
+        120
+      ]
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "vscode-neovim.neovimPath": "/usr/local/bin/nvim"
 }
 

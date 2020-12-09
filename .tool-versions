@@ -1,5 +1,5 @@
 nodejs 13.8.0
-ruby system
+ruby 2.7.1
 graalvm system
 java system
 nim system

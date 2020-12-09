@@ -1,0 +1,1 @@
+alias du=dust
