@@ -1,7 +1,9 @@
 tap "acciaiodigitale/mint-lang"
+tap "borgbackup/tap"
 tap "buildpacks/tap"
 tap "cavaliercoder/dmidecode"
 tap "dwarvesf/tap"
+tap "eugenmayer/dockersync"
 tap "github/gh"
 tap "graalvm/tap"
 tap "hacker1024/hacker1024"
@@ -12,12 +14,15 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "kdabir/tap"
 tap "popcorn-official/popcorn-desktop", "https://github.com/popcorn-official/popcorn-desktop.git"
 tap "puma/puma"
 tap "spaceghost/casks"
 tap "unisonweb/unison"
 # Run your GitHub Actions locally 🚀
 brew "act"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -30,8 +35,10 @@ brew "bat"
 brew "bison"
 # GNU database manager
 brew "gdbm"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+# YAML Parser
+brew "libyaml"
+# Simple wrapper script for the Borg backup software
+brew "borgmatic"
 # New way to see and navigate directory trees
 brew "broot"
 # Portable Foreign Function Interface library
@@ -44,14 +51,14 @@ brew "certbot"
 brew "coreutils"
 # Configurable talking characters in ASCII art
 brew "cowsay"
-# YAML Parser
-brew "libyaml"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Update dynamic DNS entries
 brew "ddclient", restart_service: true
 # Emulates the detach feature of screen
 brew "dtach"
+# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
+brew "duck"
 # Modern replacement for 'ls'
 brew "exa"
 # Command-line tool to interact with exercism.io
@@ -166,6 +173,8 @@ brew "rsync"
 brew "ruby-install"
 # Generate ASCII art with terminal, shell, and OS info
 brew "screenfetch"
+# Version control system designed to be a better CVS
+brew "subversion"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
 # Text interface for Git repositories
@@ -173,11 +182,15 @@ brew "tig"
 # Virtual Private Network (VPN) tool
 brew "tinc"
 # Anonymizing overlay network for TCP
-brew "tor"
+brew "tor", restart_service: true
+# File synchronization tool for OSX
+brew "unison"
 # Extract, view, and test RAR archives
 brew "unrar"
 # Execute commands when watched files change
 brew "watchexec"
+# Command-line streaming torrent client
+brew "webtorrent-cli"
 # Extensible IRC client
 brew "weechat", args: ["HEAD"]
 # Internet file retriever
@@ -188,6 +201,8 @@ brew "youtube-dl"
 brew "zip"
 # The Mint Language Executable
 brew "acciaiodigitale/mint-lang/mint-lang"
+# Deduplicating archiver with compression and authenticated encryption
+brew "borgbackup/tap/borgbackup-fuse"
 # A CLI for building apps using Cloud Native Buildpacks
 brew "buildpacks/tap/pack"
 # Dmidecode reports information about your system's hardware.
@@ -196,6 +211,8 @@ brew "cavaliercoder/dmidecode/dmidecode"
 brew "hacker1024/hacker1024/coretemp"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
+# checks presence of various command line tools and their versions on the path
+brew "kdabir/tap/has"
 # A tool to manage rack apps in development with puma
 brew "puma/puma/puma-dev"
 # The Unison Language and Codebase Manager.
@@ -207,11 +224,15 @@ cask "background-music"
 cask "beardedspice"
 cask "blackhole"
 cask "cakebrew"
+cask "calibre"
 cask "caption"
 cask "eloston-chromium"
 cask "eqmac"
+cask "font-anonymice-powerline"
 cask "font-fantasque-sans-mono"
 cask "font-hack-nerd-font"
+cask "font-powerline-symbols"
+cask "font-source-code-pro-for-powerline"
 cask "fuse"
 cask "graalvm-ce-java11"
 cask "hyper"
@@ -223,11 +244,11 @@ cask "kitty"
 cask "mtmr"
 cask "openemu"
 cask "osxfuse"
+cask "owasp-zap"
 cask "patchwork"
 cask "pennywise"
 cask "popcorn-time"
 cask "proxyman"
-cask "reaper"
 cask "seaglass"
 cask "sensei"
 cask "sensiblesidebuttons"
@@ -240,5 +261,11 @@ cask "tunnelblick"
 cask "typora"
 cask "vimmotion"
 cask "vlc"
+cask "vorta"
 cask "vscodium"
 cask "xpra"
+
+tap "danielbayley/alfred"
+cask "alfred-theme"
+# App dependency already installed independently.
+alfred "alfred-workflow", args: { "skip-cask-deps": true }
